@@ -1,30 +1,30 @@
 # DuckDuckGo Scraper
 
-A [Robomotion](https://robomotion.io) RPA flow that searches DuckDuckGo and exports the results to an Excel file.
+Un flux RPA [Robomotion](https://robomotion.io) qui recherche sur DuckDuckGo et exporte les résultats dans un fichier Excel.
 
-## How It Works
+## Comment ça fonctionne
 
-1. **Prompts for a search query** via an input dialog box
-2. **Opens a browser** and navigates to [duckduckgo.com](https://duckduckgo.com)
-3. **Types the query** into the search box and submits it (via a subflow that clicks the search button)
-4. **Waits for results** to load, then scrapes article titles and links using a browser script
-5. **Parses the results** and writes them to `~/results.xlsx`
+1. **Demande une requête de recherche** via une boîte de dialogue
+2. **Ouvre un navigateur** et accède à [duckduckgo.com](https://duckduckgo.com)
+3. **Saisit la requête** dans la barre de recherche et la soumet (via un sous-flux qui clique sur le bouton de recherche)
+4. **Attend les résultats**, puis extrait les titres et liens des articles à l'aide d'un script navigateur
+5. **Analyse les résultats** et les écrit dans `~/results.xlsx`
 
-## Project Structure
+## Structure du projet
 
-- `main.ts` — Main flow definition (query input, browser automation, scraping, Excel export)
-- `main.designer.ts` — Designer metadata (node positions, camera)
-- `subflows/beeb5c.ts` — Subflow that clicks the DuckDuckGo search button
-- `subflows/beeb5c.designer.ts` — Subflow designer metadata
+- `main.ts` — Définition du flux principal (saisie de requête, automatisation du navigateur, extraction, export Excel)
+- `main.designer.ts` — Métadonnées du concepteur (positions des nœuds, caméra)
+- `subflows/beeb5c.ts` — Sous-flux qui clique sur le bouton de recherche DuckDuckGo
+- `subflows/beeb5c.designer.ts` — Métadonnées du concepteur du sous-flux
 
-## Output
+## Sortie
 
-An Excel file (`results.xlsx`) is created in the user's home directory with two columns:
+Un fichier Excel (`results.xlsx`) est créé dans le répertoire personnel de l'utilisateur avec deux colonnes :
 
-| Title | Link |
+| Titre | Lien |
 |-------|------|
-| Result title | Result URL |
+| Titre du résultat | URL du résultat |
 
-## Requirements
+## Prérequis
 
-- [Robomotion](https://robomotion.io) runtime with browser automation support
+- Runtime [Robomotion](https://robomotion.io) avec prise en charge de l'automatisation du navigateur
