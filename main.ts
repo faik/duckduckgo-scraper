@@ -1,6 +1,6 @@
 import { flow, Custom, Message } from '@robomotion/sdk';
 
-flow.create('f212efc9-113b-4d06-8732-ada8e0ab2c99', 'Duck Duck External', (f) => {
+flow.create('2defe0f3-eeb3-4bfe-a453-61a34c7a83e0', 'DuckDuckGo Scraper', (f) => {
   f.node('dd39a8', 'Core.Trigger.Inject', 'Start', {})
     .then('d25a94', 'Core.Dialog.InputBox', 'Get Query', {
     inTitle: Custom('DuckDuckGo Search'),
